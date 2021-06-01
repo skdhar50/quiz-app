@@ -1,26 +1,9 @@
 <template>
 <div class="ctr">
-    <div class="questions-ctr">
-        <div class="progress">
-            <div class="bar"></div>
-            <div class="status">1 out of 3 questions answered</div>
-        </div>
-        <div class="single-question">
-            <div class="question">Which of the following blood vessels carries deoxygenated blood?</div>
-            <div class="answers">
-                <div class="answer">Sample Answer 1</div>
-                <div class="answer">Sample Answer 2</div>
-                <div class="answer">Sample Answer 3</div>
-                <div class="answer">Sample Answer 4</div>
-            </div>
-        </div>
-    </div>
-    <div class="result">
-        <div class="title">You got sample result 1!</div>
-        <div class="desc">
-            Enter a short description here about the result.
-        </div>
-    </div>
+    
+    <questions />
+    <result />
+    
     <button type="button" class="reset-btn">Reset</button>
 </div>
   <!-- <button @click.prevent="load">Load</button>
@@ -33,9 +16,16 @@
 
 <script>
 import axios from "axios";
+import Questions from "./components/Questions.vue";
+import Result from "./components/result.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  components: { 
+    Questions,
+    Result
+  },
+  
   data() {
     return {
       result: []
